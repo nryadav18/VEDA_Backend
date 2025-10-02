@@ -50,19 +50,7 @@ app.get('/', (req, res) => {
     res.send('data getting succefully its true');
 })
 
-const server = https.createServer(
-    {
-      key: fs.readFileSync('/etc/letsencrypt/live/adityauniversity.in-0002/privkey.pem'),
-      cert: fs.readFileSync('/etc/letsencrypt/live/adityauniversity.in-0002/fullchain.pem'),
-    },
-    app
-  );
-
-// app.listen(port, () => {
-//     console.log('server started at port ' + port);
-// })
-
-server.listen(PORT, (req, res) => {
+app.listen(PORT, (req, res) => {
     console.log(`Server Started at PORT ${PORT}`);
   });
 
